@@ -1,0 +1,74 @@
+<div class="chat_wrapper">
+  <!-- Panel lateral para usuarios conectados -->
+  <aside class="sidebar">
+    <h3>Usuarios Conectados</h3>
+    <ul class="user_list">
+      <li 
+        *ngFor="let user of connectedUsers" 
+        (click)="selectRecipient(user)" 
+        [class.selected]="user === recipientId">
+        {{ user }}
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Ventana del chat -->
+  <main class="chat_window">
+    <header class="top_menu">
+      <div class="buttons">
+        <div class="button close"></div>
+        <div class="button minimize"></div>
+        <div class="button maximize"></div>
+      </div>
+      <div class="title">
+        <img src="../../../assets/whatsapp-icon.png" width="25" height="25" alt="WhatsApp Icon" />
+        WhatsApp
+      </div>
+    </header>
+
+    <section class="notifications">
+      <div 
+        *ngFor="let notification of notifications" 
+        class="notification"
+        [@fadeInOut]> <!-- Aplicamos la animación aquí -->
+        {{ notification }}
+      </div>
+    </section>
+
+    <section class="chat_content">
+      <ul class="messages">
+        <li
+          class="message"
+          *ngFor="let item of messageList"
+          [ngClass]="{
+            'left': item.message_side === 'receiver',
+            'right': item.message_side === 'sender'
+          }"
+        >
+          <div class="message_username">{{ item.user }}</div>
+          <div class="avatar">{{ item.user.charAt(0).toUpperCase() }}</div>
+          <div class="text_wrapper">
+            <div class="text">{{ item.message }}</div>
+            <div class="message_time">{{ item.time }}</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="bottom_wrapper clearfix">
+      <div class="message_input_wrapper">
+        <input
+          class="message_input"
+          placeholder="Escribe un mensaje..."
+          [(ngModel)]="messageInput"
+          (keyup.enter)="sendMessage()"
+          aria-label="Escribir mensaje"
+        />
+      </div>
+      <button class="send_message" (click)="sendMessage()" aria-label="Enviar mensaje">
+        <div class="icon"></div>
+        <div class="text">Enviar</div>
+      </button>
+    </footer>
+  </main>
+</div>

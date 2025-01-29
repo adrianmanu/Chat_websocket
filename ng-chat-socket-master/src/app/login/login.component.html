@@ -1,0 +1,21 @@
+<div class="login-container">
+    <div class="login-card">
+      <div class="brand-container">
+        <img src="assets/app-logo.gif" alt="App Logo" class="app-logo" />
+        <h1 class="app-name">ElPutiChat</h1>
+      </div>
+      <h2>¡Bienvenido!</h2>
+      <p>Por favor, ingresa tu nickname para acceder al chat</p>
+      <form (ngSubmit)="onLogin()" class="login-form">
+        <input 
+          type="text" 
+          [(ngModel)]="nickname" 
+          name="nickname"
+          placeholder="Escribe tu nickname" 
+          required
+        />
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+  </div>
+  
