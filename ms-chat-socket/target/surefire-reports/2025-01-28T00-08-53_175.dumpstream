@@ -1,0 +1,5 @@
+# Created at 2025-01-28T00:08:53.728
+Boot Manifest-JAR contains absolute paths in classpath 'D:\SEMESTRE OCT24-MAR25\DISTRIBUIDAS\PARCIAL2\PROYECTO\Whatsapp\ms-chat-socket\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

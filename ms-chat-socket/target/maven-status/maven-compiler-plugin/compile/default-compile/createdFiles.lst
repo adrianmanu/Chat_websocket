@@ -1,0 +1,7 @@
+com\chat\socket\services\ChatMessageService.class
+com\chat\socket\repositories\ChatMessageRepository.class
+com\chat\socket\MsChatSocketApplication.class
+com\chat\socket\services\ChatMessageServiceImpl.class
+com\chat\socket\model\entity\ChatMessage.class
+com\chat\socket\configuration\WebSocketConfiguration.class
+com\chat\socket\controller\WebSocketController.class
